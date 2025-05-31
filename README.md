@@ -21,5 +21,6 @@ The training phase involves teaching the YOLO v8 model to accurately identify an
 
 Below is the configuration file (dataset.yaml) we created, clearly defining paths to our training and validation datasets, and specifying the object classes the YOLO v8 model will learn. This concise setup helps YOLO to seamlessly access the images and corresponding annotations during training and evaluation.
 
-![dataset](https://github.com/user-attachments/assets/0d788dd4-6b79-40c0-a4cd-dd9ccd934c31)
+![dataset](https://github.com/user-attachments/assets/d5eaf458-351a-4cd6-8fbd-177151280897)
+
 
