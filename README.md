@@ -23,4 +23,10 @@ Below is the configuration file (dataset.yaml) we created, clearly defining path
 
 ![dataset](https://github.com/user-attachments/assets/d5eaf458-351a-4cd6-8fbd-177151280897)
 
+## Hyperparameters
 
+We trained our YOLO v8 model with the following hyperparameters: the training ran for 20 epochs, and images were resized to a resolution of 640 × 640. The model was initialized with the YOLOv8-nano variant (yolov8n.pt) to balance accuracy and computational efficiency. Training utilized a GPU device (CUDA) to accelerate the process. The configuration and dataset paths were specified in the dataset.yaml file, which clearly defined our training and validation splits and listed the class labels.
+
+## Results
+
+After training YOLO v8 for 20 epochs, our model achieved strong performance in object detection, demonstrated by key evaluation metrics. Specifically, the model obtained a precision of 99.41%, indicating high accuracy in predictions, and a recall of 98.98%, showing effectiveness in detecting nearly all objects. The mean average precision (mAP@0.50), which evaluates object localization at an Intersection over Union (IoU) threshold of 0.50, reached an excellent 99.11%. Furthermore, the mAP@0.50–0.95 metric, which provides a stricter evaluation across multiple IoU thresholds, was 88.63%, confirming the model's robustness and accurate localization capabilities. These results demonstrate the effectiveness of our YOLO v8 model for detecting objects within the LineMOD dataset.
