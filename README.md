@@ -30,3 +30,10 @@ We trained our YOLO v8 model with the following hyperparameters: the training ra
 ## Results
 
 After training YOLO v8 for 20 epochs, our model achieved strong performance in object detection, demonstrated by key evaluation metrics. Specifically, the model obtained a precision of 99.41%, indicating high accuracy in predictions, and a recall of 98.98%, showing effectiveness in detecting nearly all objects. The mean average precision (mAP@0.50), which evaluates object localization at an Intersection over Union (IoU) threshold of 0.50, reached an excellent 99.11%. Furthermore, the mAP@0.50–0.95 metric, which provides a stricter evaluation across multiple IoU thresholds, was 88.63%, confirming the model's robustness and accurate localization capabilities. These results demonstrate the effectiveness of our YOLO v8 model for detecting objects within the LineMOD dataset.
+
+## Confusion Matrix Analysis of YOLOv8 Predictions
+
+The confusion matrix provides a visual summary of the model’s classification performance across all 13 object classes. Most objects such as ape, can, cat, and driller show strong diagonal dominance, indicating high accuracy in correctly predicting their respective classes. However, there are a few off-diagonal values suggesting occasional misclassifications. For example, some instances of benchvise were misclassified as background or other objects, which may reflect visual similarities or lower feature distinctiveness. The presence of predictions under the background row implies that the model sometimes fails to associate certain true objects with any known class, possibly due to occlusion or insufficient confidence. Overall, the matrix confirms the model’s high performance, with most predictions aligning correctly.
+
+![confusion_matrix](https://github.com/user-attachments/assets/7ed1a5dc-07d6-481f-8f87-ee29ff03f7c5)
+
