@@ -43,3 +43,11 @@ This Recall-Confidence Curve shows how recall varies with model confidence. For 
 
 ![R_curve](https://github.com/user-attachments/assets/515b30ed-729e-44d3-aa9c-757244fa6afb)
 
+## Precision-Confidence Curve Analysis
+
+The precision-confidence plot shows that almost every class reaches ≈1.0 precision once the confidence threshold passes about 0.05. Most curves (e.g., ape, camera, lamp, phone) hug the top border all the way across, meaning the detector makes almost no false-positives for those objects. Two classes dip a little: glue (yellow) and squirrel (orange) stay above 0.9 but climb more gradually, so they need a slightly higher score to achieve perfect precision. The bold blue “all classes” line averages these results and plateaus at ≈0.98, confirming that the model is highly reliable in predicting the correct class whenever it decides to fire.
+
+![P_curve](https://github.com/user-attachments/assets/aee264a5-493d-4917-b264-da543152d0a1)
+
+
+
