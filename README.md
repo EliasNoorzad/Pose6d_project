@@ -39,13 +39,13 @@ The confusion matrix provides a visual summary of the model’s classification p
 
 ## Recall-Confidence Curve Analysis
 
-This Recall-Confidence Curve shows how recall varies with model confidence. For most classes, recall remains close to 1 across a wide range of confidence values, indicating strong detection performance. However, the squirrel (object 02) class shows a significant drop as confidence increases, meaning the model is less confident or consistent in identifying squirrel instances. Overall, the curve highlights high recall across most classes with some room for improvement in a few specific ones.
+Recall is equally strong overall: the network retrieves 99 % of all ground-truth boxes ( R ≈ 0.99 ). Twelve of the thirteen classes achieve essentially perfect recall (1.00 or ≥ 0.998), meaning that almost every instance of ape, camera, pitcher, cat, driller, duck, eggbox, glue, hole-puncher, iron, lamp, and phone is detected. The only clear shortfall is the squirrel (object 02) class at 0.87, indicating that roughly one in eight squirrel instances is still missed—likely because this object appears smaller and with less texture in many frames. Apart from that single outlier, the detector shows excellent coverage, confirming that the original LineMOD train/val splits (without any synthetic augmentation) were sufficient for the model to generalise across viewpoint and scale variations for nearly every object.
 
 ![R_curve](https://github.com/user-attachments/assets/515b30ed-729e-44d3-aa9c-757244fa6afb)
 
 ## Precision-Confidence Curve Analysis
 
-The precision-confidence plot shows that almost every class reaches ≈1.0 precision once the confidence threshold passes about 0.05. Most curves (e.g., ape, camera, lamp, phone) hug the top border all the way across, meaning the detector makes almost no false-positives for those objects. Two classes dip a little: glue (yellow) and squirrel (orange) stay above 0.9 but climb more gradually, so they need a slightly higher score to achieve perfect precision. The bold blue “all classes” line averages these results and plateaus at ≈0.98, confirming that the model is highly reliable in predicting the correct class whenever it decides to fire.
+Precision is consistently high across almost the entire label set: averaged over all 13 objects the detector delivers a 0.994 precision, and eight classes (ape, camera, pitcher, cat, duck, hole-puncher, iron and phone) sit at 0.992 – 0.999, indicating virtually no false positives. Squirrel (0.989) and driller (0.989) trail only slightly, while glue is the lone outlier at 0.971, a value that still reflects good discrimination but suggests occasional confusion with visually similar regions. The perfect 1.000 score for eggbox confirms that every prediction for that class during validation was correct. In short, the model is highly precise overall, with only the glue class showing room for further refinement—perhaps through additional examples or harder negative mining for that object.
 
 ![P_curve](https://github.com/user-attachments/assets/aee264a5-493d-4917-b264-da543152d0a1)
 
