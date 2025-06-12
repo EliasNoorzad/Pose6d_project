@@ -3,7 +3,7 @@ We adopted YOLOv8 as our real‐time 2D detector by first converting each object
 
 ## Original LineMOD layout
 
-Each object (e.g., 01, 02, … 15) lives in its own directory that contains every sensing modality and annotation in one place: an rgb/ folder with all colour frames (0000.png, 0001.png, …), matching depth/ and mask/ folders, the gt.yml file holding per-frame 6-DoF pose plus 2-D bounding boxes, and two plain-text lists (train.txt and test.txt) that define which image IDs belong to training and validation.
+The original dataset was structured per object, containing individual folders named numerically from 01 to 15. Within each object-specific folder, three modalities were provided: RGB color images (rgb/), depth maps (depth/), and segmentation masks (mask/). Each image file was sequentially numbered, such as 0000.png, 0001.png, and so forth. Additionally, a file named gt.yml provided pose information and 2D bounding boxes for each frame. The dataset also included two separate text files, train.txt and test.txt, listing the specific image IDs designated for training and validation respectively.
 
 ![original dataset](https://github.com/user-attachments/assets/6acd27ee-b367-4524-8f13-e5addf792fc2)
 
