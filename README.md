@@ -9,7 +9,7 @@ Each object (e.g., 01, 02, … 15) lives in its own directory that contains ever
 
 ## YOLO-ready layout
 
-After conversion, the same data are split by purpose rather than by modality. Two top-level folders — train/ and val/ — each hold an images/ sub-folder with the RGB frames and a labels/ sub-folder with companion .txt files whose four normalised numbers encode the bounding-box centre and size. Every filename was prefixed with the object ID (e.g., 04_0933.png, 04_0933.txt) so that images from different objects coexist without collisions, and a single dataset.yaml lists the 13 class names YOLO sees during training.
+After conversion, the dataset is organized specifically for YOLO training into three distinct subsets: training, validation, and testing, each represented by the top-level folders train/, val/, and test/. Each subset contains an images/ directory holding RGB frames, and a parallel labels/ directory with corresponding .txt files specifying bounding boxes in YOLO-compatible format. File naming convention includes an object-ID prefix (e.g., 01_0004.png and 01_0004.txt), ensuring that images of multiple objects coexist without naming conflicts. The train/ split is used directly for model training, the val/ split serves to tune hyperparameters and prevent overfitting, while the test/ split is reserved strictly for evaluating the final model performance on unseen data.
 
 ![yolo](https://github.com/user-attachments/assets/669ddc5b-58bb-44aa-9ab1-47d47d729ad2)
 
