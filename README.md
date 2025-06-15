@@ -25,7 +25,7 @@ Below is the configuration file (dataset.yaml) we created, clearly defining path
 
 ## Hyperparameters
 
-We trained our YOLO v8 model with the following hyperparameters: the training ran for 23 epochs, and images were resized to a resolution of 640 × 640. The model was initialized with the YOLOv8-nano variant (yolov8n.pt) to balance accuracy and computational efficiency. Training utilized a GPU device (CUDA) to accelerate the process. The configuration and dataset paths were specified in the dataset.yaml file, which clearly defined our training, validation, and testing splits and listed the class labels.
+We trained our YOLO v8 model with the following hyperparameters: the training ran for 30 epochs, and images were resized to a resolution of 640 × 640. The model was initialized with the YOLOv8-nano variant (yolov8n.pt) to balance accuracy and computational efficiency. Training utilized a GPU device (CUDA) to accelerate the process. The configuration and dataset paths were specified in the dataset.yaml file, which clearly defined our training, validation, and testing splits and listed the class labels.
 
 ## Results
 
@@ -41,9 +41,9 @@ The confusion matrix obtained from the test set confirms strong classification p
 
 ## Recall-Confidence Curve Analysis
 
-Recall is equally strong overall: the network retrieves 99 % of all ground-truth boxes ( R ≈ 0.99 ). Twelve of the thirteen classes achieve essentially perfect recall (1.00 or ≥ 0.998), meaning that almost every instance of ape, camera, pitcher, cat, driller, duck, eggbox, glue, hole-puncher, iron, lamp, and phone is detected. The only clear shortfall is the squirrel (object 02) class at 0.87, indicating that roughly one in eight squirrel instances is still missed—likely because this object appears smaller and with less texture in many frames. Apart from that single outlier, the detector shows excellent coverage, confirming that the original LineMOD train/val splits (without any synthetic augmentation) were sufficient for the model to generalise across viewpoint and scale variations for nearly every object.
+The evaluation on the test set confirms strong overall performance, with a recall of 99.1% and mAP50-95 of 91.3%, demonstrating robust generalization to unseen data. Analysis of the recall-confidence curve reveals excellent recall across almost all object classes, consistently achieving near-perfect detection even at relatively high confidence thresholds. However, performance for the "squirrel" (Object 02) class remains comparatively weaker, with a recall of 89.7% and mAP50-95 of 69.4%. The curve indicates this class suffers from systematic detection misses, likely due to data-related issues rather than model limitations. The "glue" class also shows slightly lower localization quality (mAP50-95 of 87.8%) and minor recall drops at higher confidence thresholds. Apart from these two cases, all other classes maintain very high precision, recall, and localization quality, highlighting the model's effectiveness across the majority of object categories. 
 
-![R_curve](https://github.com/user-attachments/assets/515b30ed-729e-44d3-aa9c-757244fa6afb)
+![R_curve (1)](https://github.com/user-attachments/assets/a7a2034a-3ea5-4b6c-92bd-f5286771e5a8)
 
 ## Precision-Confidence Curve Analysis
 
