@@ -35,9 +35,9 @@ See detailed implementation steps in [models/YOLO_training.ipynb](models/YOLO_tr
 
 ## Confusion Matrix Analysis 
 
-The confusion matrix provides a visual summary of the model’s classification performance across all 13 object classes. Most objects such as ape, can, cat, and driller show strong diagonal dominance, indicating high accuracy in correctly predicting their respective classes. However, there are a few off-diagonal values suggesting occasional misclassifications. For example, some instances of squirrel (object 02) were misclassified as background or other objects, which may reflect visual similarities or lower feature distinctiveness. The presence of predictions under the background row implies that the model sometimes fails to associate certain true objects with any known class, possibly due to occlusion or insufficient confidence. Overall, the matrix confirms the model’s high performance, with most predictions aligning correctly.
+The confusion matrix obtained from the test set confirms strong classification performance for nearly all object classes, as indicated by the dominant diagonal entries representing correct detections. Most classes—such as "ape," "camera," "pitcher," "cat," and others—achieved perfect accuracy, with all 100 ground-truth instances correctly identified. However, the "squirrel" class showed some difficulty, with 89 out of 96 instances correctly detected, while 7 false positives and 8 missed detections appeared, contributing to its lower recall. The "glue", "phone" classes also experienced minor detection errors. Overall, the matrix indicates excellent generalization capability, highlighting only slight areas for further refinement, particularly for the "squirrel" class.
 
-![confusion_matrix](https://github.com/user-attachments/assets/2bb19b02-def5-473e-847a-cfa60bb4ef3b)
+![confusion_matrix (1)](https://github.com/user-attachments/assets/1782f6dc-907f-43f2-8800-17749a339490)
 
 ## Recall-Confidence Curve Analysis
 
