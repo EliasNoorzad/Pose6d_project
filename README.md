@@ -29,7 +29,7 @@ We trained our YOLO v8 model with the following hyperparameters: the training ra
 
 ## Results
 
-After training YOLO v8 for 20 epochs, our model achieved strong performance in object detection, demonstrated by key evaluation metrics. Specifically, the model obtained a precision of 99.41%, indicating high accuracy in predictions, and a recall of 98.98%, showing effectiveness in detecting nearly all objects. The mean average precision (mAP@0.50), which evaluates object localization at an Intersection over Union (IoU) threshold of 0.50, reached an excellent 99.11%. Furthermore, the mAP@0.50–0.95 metric, which provides a stricter evaluation across multiple IoU thresholds, was 88.63%, confirming the model's robustness and accurate localization capabilities. These results demonstrate the effectiveness of our YOLO v8 model for detecting objects within the LineMOD dataset.
+The trained YOLO model demonstrated strong performance on unseen test data, achieving an overall precision (Box P) of 99.6%, recall of 99.1%, mAP50 of 99.2%, and mAP50-95 of 91.3%. These results closely align with training-set metrics (98.0% precision, 98.3% recall, mAP50 99.1%, and mAP50-95 91.5%), indicating robust generalization capability. Notably, performance across most object classes was consistently high, with the majority surpassing 90% in mAP50-95. However, the "squirrel" class exhibited slightly lower recall (89.7%) and mAP50-95 (69.4%), highlighting potential challenges arising from limited data quality or variability. Overall, the model demonstrates excellent detection and localization performance on novel data, with minor opportunities for improvement in specific object classes.
 
 ## Confusion Matrix Analysis 
 
