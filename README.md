@@ -49,7 +49,7 @@ The evaluation on the test set confirms strong overall performance, with a recal
 
 Precision is consistently high across almost the entire label set: averaged over all 13 objects the detector delivers a 0.994 precision, and eight classes (ape, camera, pitcher, cat, duck, hole-puncher, iron and phone) sit at 0.992 – 0.999, indicating virtually no false positives. Squirrel (0.989) and driller (0.989) trail only slightly, while glue is the lone outlier at 0.971, a value that still reflects good discrimination but suggests occasional confusion with visually similar regions. The perfect 1.000 score for eggbox confirms that every prediction for that class during validation was correct. In short, the model is highly precise overall, with only the glue class showing room for further refinement—perhaps through additional examples or harder negative mining for that object.
 
-![P_curve](https://github.com/user-attachments/assets/aee264a5-493d-4917-b264-da543152d0a1)
+![P_curve (1)](https://github.com/user-attachments/assets/6a88c0d4-5902-45f8-b619-f162d6781701)
 
 
 
