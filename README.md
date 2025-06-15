@@ -25,7 +25,7 @@ Below is the configuration file (dataset.yaml) we created, clearly defining path
 
 ## Hyperparameters
 
-We trained our YOLO v8 model with the following hyperparameters: the training ran for 20 epochs, and images were resized to a resolution of 640 × 640. The model was initialized with the YOLOv8-nano variant (yolov8n.pt) to balance accuracy and computational efficiency. Training utilized a GPU device (CUDA) to accelerate the process. The configuration and dataset paths were specified in the dataset.yaml file, which clearly defined our training, validation, and testing splits and listed the class labels.
+We trained our YOLO v8 model with the following hyperparameters: the training ran for 23 epochs, and images were resized to a resolution of 640 × 640. The model was initialized with the YOLOv8-nano variant (yolov8n.pt) to balance accuracy and computational efficiency. Training utilized a GPU device (CUDA) to accelerate the process. The configuration and dataset paths were specified in the dataset.yaml file, which clearly defined our training, validation, and testing splits and listed the class labels.
 
 ## Results
 
