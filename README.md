@@ -53,5 +53,13 @@ The model does **not** implement the full PoseCNN architecture:
 
 The models are therefore best described as **PoseNet-inspired regression networks**, with the RGB-D extension being influenced by the PoseCNN and DenseFusion papers.
 
+# How to Run and Test the 6D Object Pose Estimation Pipeline (YOLO + PoseNet)
+The provided scripts allow you to run and test a complete 6D object pose estimation pipeline.
+
+1. **Object Detection** using a YOLOv8 model.
+2. **Pose Estimation** using two different PoseNet6D variants:
+   - `tryModel_RGB.ipynb`: tests RGB-only model.
+   - `tryModel_RGBD.ipynb`: tests RGB-D model that uses both RGB and depth information.
+
 
 
