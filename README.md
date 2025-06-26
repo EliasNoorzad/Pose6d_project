@@ -30,7 +30,7 @@ There are two training notebooks provided for 6D object pose estimation using th
 
  [models/training_RGBD.ipynb](models/training_RGBD.ipynb) trains a PoseNet6D_RGBD model using both RGB and depth images.
 
- *Note*: The trained model weights (.pt files) were not included in the repository due to GitHub’s file size limitations, which restrict individual file uploads to a maximum of 25 MB. To access the weights, an external download link can be provided upon request or hosted through a suitable file-sharing service.
+ **Note:** The trained model weights (.pt files) were not included in the repository due to GitHub’s file size limitations, which restrict individual file uploads to a maximum of 25 MB. To access the weights, an external download link can be provided upon request or hosted through a suitable file-sharing service.
 
 Each notebook includes all necessary preprocessing steps, from loading and formatting the data to preparing it for model input. Both models are designed to predict the 6D pose of objects, including 3D translation and rotation, and are evaluated using the ADD metric.
 
