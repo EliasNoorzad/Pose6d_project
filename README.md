@@ -32,17 +32,24 @@ There are two training notebooks provided for 6D object pose estimation using th
 
 Both models are designed to predict the 6D pose of objects, including 3D translation and rotation, and are evaluated using the ADD metric.
 
-## Recall-Confidence Curve Analysis
+## Model architecture
 
-The evaluation on the test set confirms strong overall performance, with a recall of 99.1% and mAP50-95 of 91.3%, demonstrating robust generalization to unseen data. Analysis of the recall-confidence curve reveals excellent recall across almost all object classes, consistently achieving near-perfect detection even at relatively high confidence thresholds. However, performance for the "squirrel" (Object 02) class remains comparatively weaker, with a recall of 89.7% and mAP50-95 of 69.4%. The curve indicates this class suffers from systematic detection misses, likely due to data-related issues rather than model limitations. The "glue" class also shows slightly lower localization quality (mAP50-95 of 87.8%) and minor recall drops at higher confidence thresholds. Apart from these two cases, all other classes maintain very high precision, recall, and localization quality, highlighting the model's effectiveness across the majority of object categories. 
+The models are inspired by the literature on 6D object pose estimation, particularly **DenseFusion** [1] and **PoseCNN** [2]. 
 
-![R_curve (1)](https://github.com/user-attachments/assets/a7a2034a-3ea5-4b6c-92bd-f5286771e5a8)
+Our implementation is a **highly simplified PoseNet-style model** [3], based on direct regression of:
 
-## Precision-Confidence Curve Analysis
+- 3D translation vector **t**
+- 3D rotation represented as a **quaternion q**.
 
-The precision curve demonstrates consistently high precision across almost all object categories. Most object classes maintain near-perfect precision, shown by curves positioned tightly at the upper limit. Specifically, classes such as "ape," "camera," "pitcher," "cat," and "lamp" exhibit precision scores between 0.996 and 0.999, indicating minimal false positives. The notable exception is the "squirrel" class, whose precision is comparatively lower at 0.989, reflected clearly by its distinctively lower position and slower rise on the precision curve, signaling a relatively higher occurrence of false positives compared to other classes. The "glue" class also slightly trails the main cluster with a precision of 0.996, suggesting a minor presence of false-positive predictions.
+The extended **PoseNet_RGBD** variant takes inspiration from **DenseFusion** [1], in the sense that it incorporates both RGB and depth information, but without implementing the full DenseFusion pipeline (no iterative refinement for example).
 
-![P_curve (1)](https://github.com/user-attachments/assets/6a88c0d4-5902-45f8-b619-f162d6781701)
+The model does **not** implement the full PoseCNN architecture:
+
+- No segmentation branch
+- No object coordinate regression
+- No PnP post-processing.
+
+The models are therefore best described as **PoseNet-inspired regression networks**, with the RGB-D extension being influenced by the PoseCNN and DenseFusion papers.
 
 
 
