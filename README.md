@@ -34,14 +34,14 @@ Both models are designed to predict the 6D pose of objects, including 3D transla
 
 ## Model architecture
 
-The models are inspired by the literature on 6D object pose estimation, particularly **DenseFusion** [1] and **PoseCNN** [2]. 
+The models are inspired by the literature on 6D object pose estimation, particularly **DenseFusion**  and **PoseCNN**.
 
-Our implementation is a **highly simplified PoseNet-style model** [3], based on direct regression of:
+Our implementation is a **highly simplified PoseNet-style model** , based on direct regression of:
 
 - 3D translation vector **t**
 - 3D rotation represented as a **quaternion q**.
 
-The extended **PoseNet_RGBD** variant takes inspiration from **DenseFusion** [1], in the sense that it incorporates both RGB and depth information, but without implementing the full DenseFusion pipeline (no iterative refinement for example).
+The extended **PoseNet_RGBD** variant takes inspiration from **DenseFusion**, in the sense that it incorporates both RGB and depth information, but without implementing the full DenseFusion pipeline (no iterative refinement for example).
 
 The model does **not** implement the full PoseCNN architecture:
 
