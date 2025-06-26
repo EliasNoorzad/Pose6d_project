@@ -30,7 +30,7 @@ There are two training notebooks provided for 6D object pose estimation using th
 
  [models/training_RGBD.ipynb](models/training_RGBD.ipynb) trains a PoseNet6D_RGBD model using both RGB and depth images.
 
-Both models are designed to predict the 6D pose of objects, including 3D translation and rotation, and are evaluated using the ADD metric.
+Each notebook includes all necessary preprocessing steps, from loading and formatting the data to preparing it for model input. Both models are designed to predict the 6D pose of objects, including 3D translation and rotation, and are evaluated using the ADD metric.
 
 ## Model architecture
 
