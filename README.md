@@ -21,7 +21,7 @@ We trained our YOLO v8 model with the following hyperparameters: the training ra
 
 See detailed implementation steps in [models/YOLO_training.ipynb](models/YOLO_training.ipynb).
 
-## 6D Object Pose Estimation
+# 6D Object Pose Estimation
 
 This project explores simplified deep learning architectures for **6D object pose estimation**, taking conceptual inspiration from well-known papers in the field, and implements a direct regression approach.
 There are two training notebooks provided for 6D object pose estimation using the LineMOD dataset:
