@@ -58,8 +58,8 @@ The provided scripts allow you to run and test a complete 6D object pose estimat
 
 1. **Object Detection** using a YOLOv8 model.
 2. **Pose Estimation** using two different PoseNet6D variants:
-   - `tryModel_RGB.ipynb`: tests RGB-only model.
-   - `tryModel_RGBD.ipynb`: tests RGB-D model that uses both RGB and depth information.
+   - [models/tryModel_RGB.ipynb](models/tryModel_RGB.ipynb): tests RGB-only model.
+   - [models/tryModel_RGBD.ipynb](models/tryModel_RGBD.ipynb): tests RGB-D model that uses both RGB and depth information.
 
 
 
