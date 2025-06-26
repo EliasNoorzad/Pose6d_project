@@ -74,4 +74,58 @@ Each notebook follows this sequence:
 5. **Visualize predictions** alongside ground-truth poses.
 6. **Evaluate performance** using the ADD metric.
 
+## Requirements
 
+Install the required Python packages using:
+
+```bash
+pip install torch torchvision \
+            opencv-python \
+            numpy \
+            matplotlib \
+            tqdm \
+            ultralytics \
+            scipy \
+            pillow \
+            scikit-image
+```
+
+---
+
+## How to Run
+
+### Option 1: Local Jupyter
+
+```bash
+jupyter notebook tryModel_RGB.ipynb
+# or
+jupyter notebook tryModel_RGBD.ipynb
+```
+
+### Option 2: Google Colab
+
+You can also upload the notebooks and model files to **Google Colab**.
+
+> **Important:** You must upload or mount your model checkpoint files and dataset manually.
+>
+> - Upload the pretrained YOLOv8 model (called 'yolo.pt') together with the PoseNet6D weights (`posenet6d_RGB.pt`, `posenet6d_RGBD.pt`).
+> - Make sure paths inside the notebook are updated accordingly to match the runtime environment (ex. `/content/` in Colab).
+> - Use `drive.mount()` in Colab to access your files.
+
+---
+
+## Required Files
+
+- YOLOv8 model weights (`yolo.pt`).
+- PoseNet RGB model (`posenet6d_RGB.pt`).
+- PoseNet RGBD model (`posenet6d_RGBD.pt`)
+- Dataset in LineMOD format with aligned RGB, depth, and ground truth poses.
+- Camera intrinsics for projection.
+
+---
+
+## Output
+
+- Predicted 6D poses (translation + rotation).
+- Visual comparisons between predictions and ground-truth.
+- ADD metric (average distance of model points).
