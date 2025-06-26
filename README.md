@@ -21,11 +21,16 @@ We trained our YOLO v8 model with the following hyperparameters: the training ra
 
 See detailed implementation steps in [models/YOLO_training.ipynb](models/YOLO_training.ipynb).
 
-## Confusion Matrix Analysis 
+## 6D Object Pose Estimation
 
-The confusion matrix obtained from the test set confirms strong classification performance for nearly all object classes, as indicated by the dominant diagonal entries representing correct detections. Most classes—such as "ape," "camera," "pitcher," "cat," and others—achieved perfect accuracy, with all 100 ground-truth instances correctly identified. However, the "squirrel" (Object 02) class showed some difficulty, with 89 out of 96 instances correctly detected, while 7 false positives and 8 missed detections appeared, contributing to its lower recall. The "glue", "phone" classes also experienced minor detection errors. Overall, the matrix indicates excellent generalization capability, highlighting only slight areas for further refinement, particularly for the "squirrel" class.
+This project explores simplified deep learning architectures for **6D object pose estimation**, taking conceptual inspiration from well-known papers in the field, and implements a direct regression approach.
+There are two training notebooks provided for 6D object pose estimation using the LineMOD dataset:
 
-![confusion_matrix (1)](https://github.com/user-attachments/assets/1782f6dc-907f-43f2-8800-17749a339490)
+ [models/training_RGB.ipynb](models/training_RGB.ipynb) trains a PoseNet6D model using RGB images only.
+
+training_RGBD.ipynb trains a PoseNet6D_RGBD model using both RGB and depth images.
+
+Both models are designed to predict the 6D pose of objects, including 3D translation and rotation, and are evaluated using the ADD metric.
 
 ## Recall-Confidence Curve Analysis
 
