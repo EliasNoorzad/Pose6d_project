@@ -61,5 +61,17 @@ The provided scripts allow you to run and test a complete 6D object pose estimat
    - [models/tryModel_RGB.ipynb](models/tryModel_RGB.ipynb): tests RGB-only model.
    - [models/tryModel_RGBD.ipynb](models/tryModel_RGBD.ipynb): tests RGB-D model that uses both RGB and depth information.
 
+## Pipeline Overview
+
+Each notebook follows this sequence:
+
+1. **Load YOLOv8 model** and perform object detection on RGB images.
+2. **Crop detected object regions** from RGB image (and optionally from depth map).
+3. **Prepare inputs** (e.g., camera intrinsics, normalized crops).
+4. **Run PoseNet6D** (RGB or RGBD) to predict the 6D object pose:
+   - 3D translation vector.
+   - 3D rotation (quaternion).
+5. **Visualize predictions** alongside ground-truth poses.
+6. **Evaluate performance** using the ADD metric.
 
 
