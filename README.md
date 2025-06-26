@@ -3,15 +3,9 @@ We adopted YOLOv8 as our real‐time 2D detector by first converting each object
 
 ## Original LineMOD layout
 
-The original dataset was structured per object, containing individual folders named numerically from 01 to 15. Within each object-specific folder, three modalities were provided: RGB color images (rgb/), depth maps (depth/), and segmentation masks (mask/). Each image file was sequentially numbered, such as 0000.png, 0001.png, and so forth. Additionally, a file named gt.yml provided pose information and 2D bounding boxes for each frame. The dataset also included two separate text files, train.txt and test.txt, listing the specific image IDs designated for training and validation respectively.
+The original dataset was organized per object (01–15), each containing RGB images, depth maps, segmentation masks, and a gt.yml file with pose and 2D bounding box data. Image IDs for training and validation were listed in train.txt and test.txt.
 
-![original dataset](https://github.com/user-attachments/assets/6acd27ee-b367-4524-8f13-e5addf792fc2)
-
-## YOLO-ready layout
-
-After conversion, the dataset is organized specifically for YOLO training into three distinct subsets: training, validation, and testing, each represented by the top-level folders train/, val/, and test/. Each subset contains an images/ directory holding RGB frames, and a parallel labels/ directory with corresponding .txt files specifying bounding boxes in YOLO-compatible format. File naming convention includes an object-ID prefix (e.g., 01_0004.png and 01_0004.txt), ensuring that images of multiple objects coexist without naming conflicts. The train/ split is used directly for model training, the val/ split serves to tune hyperparameters and prevent overfitting, while the test/ split is reserved strictly for evaluating the final model performance on unseen data.
-
-![yolo](https://github.com/user-attachments/assets/669ddc5b-58bb-44aa-9ab1-47d47d729ad2)
+After conversion, the dataset was restructured into train/, val/, and test/ folders, each with images/ and labels/ subdirectories. Labels follow YOLO format with normalized bounding boxes and class labels. Filenames include object IDs (e.g., 01_0004.png) to avoid conflicts.
 
 See detailed conversion steps in [dataset/conversion_steps.ipynb](dataset/yolo_conversion_steps.ipynb).
 
